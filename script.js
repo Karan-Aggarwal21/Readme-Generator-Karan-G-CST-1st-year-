@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const outputArea = document.getElementById('output-area');
     const loading = document.getElementById('loading');
     
-    // Example GitHub repository data (for demonstration)
     const exampleRepoData = {
         name: 'example-repo',
         full_name: 'username/example-repo',
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updated_at: '2023-09-08T14:45:00Z'
     };
     
-    // Example README content for demonstration
     const exampleReadmeContent = `Example Repository-
     Love this project? Give it a star!! ⭐ Want to make it better?? Fork it! 🍴  
 
@@ -74,7 +72,7 @@ This project is open source and available under the generous MIT License. This m
 Copyright © 2023 Your Name.
 `;
     
-    // Generate README on button click
+
     generateBtn.addEventListener('click', function() {
         const repoUrl = repoUrlInput.value.trim();
         
@@ -83,21 +81,21 @@ Copyright © 2023 Your Name.
             return;
         }
         
-        // Show loading state
+
         loading.style.display = 'block';
         outputArea.innerHTML = '';
         
-        // Simulate API call with timeout
+ 
         setTimeout(() => {
-            // Hide loading state
+         
             loading.style.display = 'none';
             
-            // Display the example README content
+           
             outputArea.textContent = exampleReadmeContent;
         }, 2000);
     });
     
-    // Copy to clipboard functionality
+
     copyBtn.addEventListener('click', function() {
         const text = outputArea.textContent;
         
@@ -122,7 +120,7 @@ Copyright © 2023 Your Name.
             });
     });
     
-    // Download README functionality
+  
     downloadBtn.addEventListener('click', function() {
         const text = outputArea.textContent;
         
@@ -140,13 +138,13 @@ Copyright © 2023 Your Name.
         document.body.appendChild(a);
         a.click();
         
-        // Clean up
+        
         setTimeout(() => {
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }, 100);
     });
     
-    // Add example URL for testing
+
     repoUrlInput.value = 'https://github.com/username/example-repo';
 });
